@@ -41,12 +41,11 @@ public class Triangle implements GeometryFiguresAreaCalculator {
         if(side1 <= 0 || side2 <= 0 || side3 <= 0) {
             throw new IllegalArgumentException();
         }
-        else if (!canFormTriangle()) {
+        else if(!canFormTriangle()) {
             throw new CannotFormTriangleException(side1, side2, side3);
         }
 
         final double SEMIPERIMETR = (side1 + side2 + side3) / 2;
-
         return Math.sqrt(SEMIPERIMETR * (SEMIPERIMETR - side1) * (SEMIPERIMETR - side2) * (SEMIPERIMETR - side3));
     }
 }
